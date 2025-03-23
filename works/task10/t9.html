@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .grade {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Calculator</h1>
+        <input type="number" id="scoreInput" placeholder="Enter Score Point" onkeyup="calculateGrade()">
+        <p>Your grade is: <span id="gradeOutput" class="grade"></span></p>
+    </div>
+    <script>
+        function calculateGrade() {
+            const scoreInput = document.getElementById('scoreInput');
+            const gradeOutput = document.getElementById('gradeOutput');
+            const score = parseInt(scoreInput.value);
+
+            if (isNaN(score) || score < 0 || score > 100) {
+                gradeOutput.textContent = "Invalid Score";
+            } else if (score >= 90) {
+                gradeOutput.textContent = "A";
+            } else if (score >= 80) {
+                gradeOutput.textContent = "B";
+            } else if (score >= 70) {
+                gradeOutput.textContent = "C";
+            } else if (score >= 60) {
+                gradeOutput.textContent = "D";
+            } else {
+                gradeOutput.textContent = "F";
+            }
+        }
+    </script>
+</body>
+</html>

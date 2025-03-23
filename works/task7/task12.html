@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+       
+        <div id="demo_div"></div>
+
+        <button onclick="show_student_info()">Click to Show Student Info</button>
+
+        <script>
+            const student = {
+                name: "Bubby",
+                id: "S00448",
+                Course: "Computer science",
+                University: "AUM",
+               
+                description: function() {
+                   
+                    return "This is a " + this.Course + " student name " + this.name + " with ID " + this.id + " at " + this.University + " University.";
+                }
+            };
+
+           
+            function show_student_info() {
+                document.getElementById("demo_div").innerHTML = student.description();
+            }
+        </script>
+    </body>
+</html>
+
+

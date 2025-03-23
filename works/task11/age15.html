@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #output_div {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <input id="dob_input" placeholder="Enter your date of birth" type="date" onchange="calculate_age();" />
+    <div id="output_div"></div>
+    <script>
+        function calculate_age() {
+            const dobInput = document.getElementById('dob_input');
+            const outputDiv = document.getElementById('output_div');
+            const dobValue = dobInput.value;
+
+            if (!dobValue) {
+                outputDiv.textContent = "Please enter your date of birth.";
+                return;
+            }
+
+            const birthDate = new Date(dobValue);
+            const currentDate = new Date();
+
+            let age = currentDate.getFullYear() - birthDate.getFullYear();
+            const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+
+            if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            outputDiv.textContent = "Your age is: " + age + " years.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Elite</title>
+    <style>
+     
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+
+      
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+  
+        .hero {
+            background: url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        .hero .cta-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+    
+        .featured-cars {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .featured-cars h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .cars-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .car-item {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .car-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .car-item h3 {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .car-item p {
+            font-size: 16px;
+            color: #666;
+            padding: 0 20px 20px;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .timeline h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline-item {
+            width: 80%;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .timeline-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+
+        .testimonials h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .testimonials-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-item {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: #444;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .testimonial-item p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-item h3 {
+            font-size: 18px;
+            color: #ff6347;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .car-item, .testimonial-item {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Auto Elite</div>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured Cars</a></li>
+                <li><a href="#timeline">History</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Auto Elite</h1>
+        <p>Your journey begins with us</p>
+        <button class="cta-button">Explore Cars</button>
+    </section>
+
+    <section id="featured" class="featured-cars">
+        <h2>Featured Cars</h2>
+        <div class="cars-grid">
+            <div class="car-item">
+                <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Car 1">
+                <h3>Luxury Sedan</h3>
+                <p>Experience the ultimate in comfort and style.</p>
+            </div>
+            <div class="car-item">
+                <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Car 2">
+                <h3>Sports Car</h3>
+                <p>Unleash the power of performance.</p>
+            </div>
+            <div class="car-item">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Car 3">
+                <h3>SUV</h3>
+                <p>Perfect for adventure and family trips.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="timeline">
+        <h2>Our History</h2>
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <h3>2005 - Founded</h3>
+                <p>Auto Elite was founded with a vision to revolutionize the car industry.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2010 - Expansion</h3>
+                <p>We expanded our services to include luxury and sports cars.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2020 - Global Reach</h3>
+                <p>Auto Elite is now a global brand with customers worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-item">
+                <p>"Auto Elite provided me with the best car-buying experience ever!"</p>
+                <h3>- John Doe</h3>
+            </div>
+            <div class="testimonial-item">
+                <p>"The quality of their cars is unmatched. Highly recommended!"</p>
+                <h3>- Jane Smith</h3>
+            </div>
+            <div class="testimonial-item">
+                <p>"Excellent customer service and a wide range of options."</p>
+                <h3>- Mike Johnson</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Auto Elite. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

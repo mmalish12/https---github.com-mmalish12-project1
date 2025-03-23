@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Student Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            background-color: #b91616;
+            color: white;
+            padding: 10px;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .insert-btn { background-color: #0f0644; color: white; }
+        .show-btn { background-color: #008CBA; color: white; }
+        .clear-input-btn { background-color: #1b0807; color: white; }
+        .clear-display-btn { background-color: #e7e7e7; color: black; }
+        #demo_div { margin-top: 20px; }
+        .student-info {
+            background-color: #f4f4f4;
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 5px;
+            width: 50%;
+        }
+        .student-info h3 {
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .student-details {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .student-details span { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <div>
+        <input id="name" placeholder="Enter student name">
+        <input id="id" placeholder="Enter student ID">
+    </div>
+    <div>
+        <input id="course" placeholder="Enter student course">
+        <input id="university" placeholder="Enter university">
+    </div>
+    <div>
+        <button onclick="insert();" class="insert-btn">Insert Info</button>
+        <button onclick="show_student_info();" class="show-btn">Show Info</button>
+    </div>
+    <div>
+        <button onclick="clear_input();" class="clear-input-btn">Clear Input</button>
+        <button onclick="clear_display();" class="clear-display-btn">Clear Display</button>
+    </div>
+    <h2>Search Student</h2>
+    <div>
+        <input id="search_name" placeholder="Enter student name to search">
+        <button onclick="search_student();" class="insert-btn">Search</button>
+    </div>
+    <div id="demo_div"></div>
+
+    
+    <script src="final.js"></script>
+</body>
+</html>

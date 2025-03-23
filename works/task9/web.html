@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Company Layout</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #cdcaca;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: rgb(239, 233, 233);
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header .logo-company {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      border: 1px solid #eee8e8;
+      padding: 5px 10px;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+
+    .company-name {
+      font-weight: bold;
+    }
+
+    .header .buttons {
+      display: flex;
+    }
+
+    .header .buttons button {
+      background-color: transparent;
+      border: none;
+      padding: 5px 10px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .header .buttons button.round {
+      border: 1px solid #cccccc;
+      border-radius: 20px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .left-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .left-content .title-subtitle {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .left-content .title-subtitle h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .left-content .title-subtitle p {
+      margin: 5px 0 0;
+    }
+
+    .left-content .description {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .right-content {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bottom-buttons {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 20px;
+    }
+
+    .bottom-buttons button {
+      background-color: transparent;
+      border: none;
+      padding: 5px 10px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    .bottom-buttons button.round {
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo-company">
+        <div class="logo">Logo</div>
+        <div class="company-name">Company Name</div>
+      </div>
+      <div class="buttons">
+        <button>Home</button>
+        <button>Services</button>
+        <button>product</button>
+        <button>help</button>
+        <button class="round">contact us</button>
+        <button class="round">more</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="left-content">
+        <div class="title-subtitle">
+          <h1>Large Title</h1>
+          <p>Sub-title</p>
+        </div>
+        <div class="description">
+          <p>Regular text paragraph for company description.</p>
+        </div>
+      </div>
+      <div class="right-content">
+        
+
+        <p>Space for something visual (e.g: product image)</p>
+      </div>
+    </div>
+
+    <div class="bottom-buttons">
+      <button>models</button>
+      <button class="round">sales</button>
+    </div>
+  </div>
+</body>
+</html>

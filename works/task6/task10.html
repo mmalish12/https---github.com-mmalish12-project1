@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Call Stack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        #pipeline {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #task_list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #task_list li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="task_input" placeholder="Enter Task Name" />
+        <button onclick="addTask()">Add Task</button>
+        <button onclick="undoTask()">Undo Task</button>
+    </div>
+
+    <div id="pipeline">
+        <h2>Process Line:</h2>
+        <ul id="task_list"></ul>
+    </div>
+
+    <script>
+        const taskList = [];
+        const taskListElement = document.getElementById('task_list');
+        const taskInput = document.getElementById('task_input');
+
+        function updateTaskList() {
+            taskListElement.innerHTML = '';
+            taskList.forEach(task => {
+                const li = document.createElement('li');
+                li.textContent = task;
+                taskListElement.appendChild(li);
+            });
+        }
+
+        function addTask() {
+            const taskName = taskInput.value.trim();
+            if (taskName) {
+                taskList.push(taskName);
+                updateTaskList();
+                taskInput.value = '';
+            }
+        }
+
+        function undoTask() {
+            if (taskList.length > 0) {
+                taskList.pop();
+                updateTaskList();
+            }
+        }
+    </script>
+</body>
+</html>
